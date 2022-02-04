@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,10 +22,22 @@ class MainActivity : AppCompatActivity() {
         val btn8:Button=findViewById(R.id.btn8)
         val btn9:Button=findViewById(R.id.btn9)
         val btnAc:Button=findViewById(R.id.btnAc)//button contains AC
+        val btnDot:Button=findViewById(R.id.btnDot)
+
+        val btnAdd:Button=findViewById(R.id.btnAdd)
+        val btnSubstraction:Button=findViewById(R.id.btnSubstraction)
+        val btnMultiplication:Button=findViewById(R.id.btnMultiplication)
+        val btnDivision:Button=findViewById(R.id.btnDivision)
+        val btnPoli:Button=findViewById(R.id.btnPoli)
+        val btnEqual:Button=findViewById(R.id.btnEqual)
         val txt:TextView=findViewById(R.id.txt)
 
         var total:String=""
         var inDisplay:String=""
+
+        var num1:Double=0.0
+        var num2:Double=0.0
+        var operation:String=""
 
         btn0.setOnClickListener(View.OnClickListener {
             inDisplay=txt.text.toString()
@@ -82,6 +93,29 @@ class MainActivity : AppCompatActivity() {
             txt.setText("")
         })
 
+        btnAdd.setOnClickListener(View.OnClickListener {
+            num1=txt.text.toString().toDouble()
+            operation="+"
+            txt.text=""
 
+        })
+        btnEqual.setOnClickListener(View.OnClickListener {
+            num2=txt.text.toString().toDouble()
+            var finalAnswer:Double=calculate(num1,num2,operation)
+            txt.text=finalAnswer.toString()
+        })
+
+
+
+
+
+
+    }
+
+    fun calculate(num1:Double,num2:Double,operation:String):Double{
+        if(operation.equals("+"))
+            return num1+num2
+        else
+            return 0.0
     }
 }
