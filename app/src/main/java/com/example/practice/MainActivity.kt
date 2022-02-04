@@ -99,6 +99,12 @@ class MainActivity : AppCompatActivity() {
             txt.text=""
 
         })
+        btnSubstraction.setOnClickListener(View.OnClickListener {//should be check just for testing purposes of git
+            num1=txt.text.toString().toDouble()
+            operation="-"
+            txt.text=""
+
+        })
         btnEqual.setOnClickListener(View.OnClickListener {
             num2=txt.text.toString().toDouble()
             var finalAnswer:Double=calculate(num1,num2,operation)
