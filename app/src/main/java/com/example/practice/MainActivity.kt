@@ -105,6 +105,12 @@ class MainActivity : AppCompatActivity() {
             txt.text=""
 
         })
+        btnMultiplication.setOnClickListener(View.OnClickListener {//should be check just for testing purposes of git
+            num1=txt.text.toString().toDouble()
+            operation="*"
+            txt.text=""
+
+        })
         btnEqual.setOnClickListener(View.OnClickListener {
             num2=txt.text.toString().toDouble()
             var finalAnswer:Double=calculate(num1,num2,operation)
@@ -121,6 +127,10 @@ class MainActivity : AppCompatActivity() {
     fun calculate(num1:Double,num2:Double,operation:String):Double{
         if(operation.equals("+"))
             return num1+num2
+        else if(operation.equals("-"))
+            return num1-num2
+        else if(operation.equals("*"))
+            return num1*num2
         else
             return 0.0
     }
