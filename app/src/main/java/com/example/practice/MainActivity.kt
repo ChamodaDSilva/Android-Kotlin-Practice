@@ -111,11 +111,18 @@ class MainActivity : AppCompatActivity() {
             txt.text=""
 
         })
+        btnDivision.setOnClickListener(View.OnClickListener {
+            num1=txt.text.toString().toDouble()
+            operation="/"
+            txt.text=""
+        })
+
         btnEqual.setOnClickListener(View.OnClickListener {
             num2=txt.text.toString().toDouble()
             var finalAnswer:Double=calculate(num1,num2,operation)
             txt.text=finalAnswer.toString()
         })
+
 
 
 
