@@ -138,6 +138,8 @@ class MainActivity : AppCompatActivity() {
             return num1-num2
         else if(operation.equals("*"))
             return num1*num2
+        else if(operation.equals("/"))
+            return num1/num2
         else
             return 0.0
     }
