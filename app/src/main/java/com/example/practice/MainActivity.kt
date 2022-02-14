@@ -116,6 +116,12 @@ class MainActivity : AppCompatActivity() {
             operation="/"
             txt.text=""
         })
+        btnPoli.setOnClickListener(View.OnClickListener {
+            num1=txt.text.toString().toDouble()
+            operation="%"
+            txt.text=""
+        })
+
 
         btnEqual.setOnClickListener(View.OnClickListener {
             num2=txt.text.toString().toDouble()
@@ -132,14 +138,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calculate(num1:Double,num2:Double,operation:String):Double{
-        if(operation.equals("+"))
+        if(operation == "+")
             return num1+num2
-        else if(operation.equals("-"))
+        else if(operation == "-")
             return num1-num2
-        else if(operation.equals("*"))
+        else if(operation == "*")
             return num1*num2
-        else if(operation.equals("/"))
+        else if(operation == "/")
             return num1/num2
+        else if(operation == "%")
+            return num1*num2/100
         else
             return 0.0
     }
