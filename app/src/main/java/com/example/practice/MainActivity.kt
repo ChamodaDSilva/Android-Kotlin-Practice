@@ -89,9 +89,14 @@ class MainActivity : AppCompatActivity() {
             total=inDisplay+9
             txt.setText(total)
         })
+        btnDot.setOnClickListener(View.OnClickListener {
+            txt.setText(".")
+        })
+
         btnAc.setOnClickListener(View.OnClickListener {
             txt.setText("")
         })
+
 
         btnAdd.setOnClickListener(View.OnClickListener {
             num1=txt.text.toString().toDouble()
